@@ -4,8 +4,6 @@ scmCredentialsId = 'gitlab_cred'
 
 multibranchPipelineJob("GAP/${projectName}_PR_Build") {
     branchSources {
-//        branchSource {
-//            source {
         git {
             id('dd847135-8391-4f66-a54c-7f8781dc3119')
             remote("${scmRepositoryUrl}")
@@ -13,8 +11,6 @@ multibranchPipelineJob("GAP/${projectName}_PR_Build") {
             includes('*')
             excludes('')
         }
-        //           }
-        //       }
     }
     factory {
         workflowBranchProjectFactory {
