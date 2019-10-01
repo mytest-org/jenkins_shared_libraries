@@ -14,7 +14,7 @@ class BuildGradle {
     void build() {
         IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
 
-        int returnStatus = steps.sh("echo \"building ${this._goals}...\"")
+        int returnStatus = steps.sh("${this._goals}")
         if (returnStatus != 0) {
             steps.error("Errors while building with gradle.")
         }
