@@ -1,5 +1,3 @@
-// A new UUID must be generated for the first run and re-used for your Job DSL, the plugin updates jobs based on ID
-UUID uuid = UUID.fromString("dd847135-8391-4f66-a54c-7f8781dc3119") // generate one @ https://www.uuidgenerator.net
 projectName = 'eureka-server'
 scmRepositoryUrl = 'https://gitlab.mynisum.com/devops/eureka-server.git'
 scmCredentialsId = 'gitlab_cred'
@@ -9,7 +7,7 @@ multibranchPipelineJob("${projectName}") {
         branchSource {
             source {
                 git {
-                    id(uuid)
+                    id('dd847135-8391-4f66-a54c-7f8781dc3119')
                     remote("${scmRepositoryUrl}")
                     credentialsId("${scmCredentialsId}")
                 }
