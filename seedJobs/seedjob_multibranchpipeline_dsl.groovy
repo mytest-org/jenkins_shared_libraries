@@ -51,7 +51,7 @@ multibranchPipelineJob("GAP/${testPublishBuild.projectName}_Test_Publish") {
             repository("${testPublishBuild.scmRepository}")
             buildForkPRHead(false)
             buildForkPRMerge(false)
-            buildOriginBranch(false)
+            buildOriginBranch(true)
             buildOriginBranchWithPR(false)
             buildOriginPRHead(false)
             buildOriginPRMerge(false)
