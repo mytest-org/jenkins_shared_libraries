@@ -8,7 +8,7 @@ class ExecuteBuild {
     private String _tool
     private String _args
 
-    BuildGradle(String tool, String args) {
+    ExecuteBuild(String tool, String args) {
         _tool = tool
         _args = args
 
