@@ -49,6 +49,12 @@ multibranchPipelineJob("GAP/${testPublishBuild.projectName}_Test_Publish") {
             apiUri("${testPublishBuild.scmApiUrl}")
             repoOwner("${testPublishBuild.scmRepositoryOwner}")
             repository("${testPublishBuild.scmRepository}")
+            buildForkPRHead(false)
+            buildForkPRMerge(false)
+            buildOriginBranch(false)
+            buildOriginBranchWithPR(false)
+            buildOriginPRHead(false)
+            buildOriginPRMerge(false)
             includes('master')
         }
     }  // end of branchSources
