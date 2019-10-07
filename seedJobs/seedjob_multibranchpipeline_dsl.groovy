@@ -1,17 +1,20 @@
+def scmId = UUID.randomUUID().toString()
 projectName = 'eureka-server'
-scmRepositoryUrl = 'https://github.com/mytest-org/eureka-server.git'
+pipelineName = "GAP/${projectName}_PR_Build"
+scmRepository = 'eureka-server'
+scmRepositoryOwner = 'mytest-org'
+scmApiUrl = 'https://api.github.com'
 scmCredentialsId = 'GIT_CREDENTIALS'
 scmApiCredentialsId = '617bab8b-39fe-43f0-a2a6-a82628d85442'
 
-multibranchPipelineJob("GAP/${projectName}_PR_Build") {
+multibranchPipelineJob("${pipelineName}") {
     branchSources {
         github {
-            id("f04e2d72-fa29-4cd9-8de3-5b28243675fc")
+            id("${scmId}")
             scanCredentialsId("${scmApiCredentialsId}")
-            //        checkoutCredentialsId("${scmCredentialsId}")
-            apiUri("https://api.github.com")
-            repoOwner("mytest-org")
-            repository("eureka-server")
+            apiUri("${scmApiUrl}")
+            repoOwner("${scmRepositoryOwner}")
+            repository("${scmRepository}")
             buildForkPRHead(false)
             buildForkPRMerge(false)
             buildOriginBranch(false)
