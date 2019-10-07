@@ -1,4 +1,5 @@
-@Library('jenkins_shared_libraries_git') _
+@Library('jenkins_shared_libraries_git@') import org.gap.seedjob.GithubMultiBranch
+//@Library('jenkins_shared_libraries_git') _
 //import org.gap.seedjob.GithubMultiBranch
 
 def Pipeline = new GithubMultiBranch(
